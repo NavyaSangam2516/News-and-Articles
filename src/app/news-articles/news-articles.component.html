@@ -1,0 +1,93 @@
+<!-- News and Articles Section -->
+<div class="news-container">
+  <div class="heading-section">
+    <h1>News and Articles</h1>
+    <p>Stay up-to-date with everything latest in real estate</p>
+  </div>
+
+  <!-- Transparent Navbar -->
+  <div class="navbar">
+    <div class="nav-links">
+      <a href="#" (click)="selectTab('All')">All</a>
+      <a href="#" (click)="selectTab('Infrastructure')">Infrastructure</a>
+      <a href="#" (click)="selectTab('Home Loan')">Home Loan</a>
+      <a href="#" (click)="selectTab('Technology')">Technology</a>
+      <a href="#" (click)="selectTab('Investment')">Investment</a>
+      <a href="#" (click)="selectTab('Taxation')">Taxation</a>
+      <a href="#" (click)="selectTab('Residential')">Residential</a>
+      <a href="#" (click)="selectTab('Construction')">Construction</a>
+      <a href="#" (click)="selectTab('Policy Change')">Policy Change</a>
+      <a href="#" (click)="selectTab('RERA')">RERA</a>
+      <a href="#" (click)="selectTab('Legal')">Legal</a>
+      <a href="#" (click)="selectTab('Help Guide')">Help Guide</a>
+      <a href="#" (click)="selectTab('Interiors Guide')">Interiors Guide</a>
+    </div>
+  </div>
+
+  <!-- Content Display Area -->
+  <div class="content-display">
+
+    <div *ngIf="filteredArticles.length > 0">
+      <div *ngIf="selectedTab === 'All'">
+      <!-- Display filtered articles -->
+      <div *ngFor="let article of filteredArticles" class="article-card">
+        <img [src]="article.imageUrl" [alt]="article.title">
+        <div class="article-content">
+          <p class="article-title">{{ article.title }}</p>
+          <p class="article-date">{{ article.date }}</p>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="filteredArticles.length === 0">
+      <!-- Display message if no articles found -->
+      <p>No articles found matching your search criteria.</p>
+    </div>
+
+    <!-- Content for All -->
+    <a href="/page1" class="article-card">
+        <img src="assets/fengshui-owl.jpg" alt="Feng Shui Owls">
+        <div class="article-content">
+          <p class="article-title">5+ Feng Shui Owls Ideas & Benefits</p>
+          <p class="article-date">Aug 04, 2024</p>
+        </div>
+      </a>
+      <a href="/page2" class="article-card">
+        <img src="assets/fengshui-gifts.jpg" alt="Feng Shui Gifts">
+        <div class="article-content">
+          <p class="article-title">15+ Feng Shui Gifts for New Home</p>
+          <p class="article-date">Aug 03, 2024</p>
+        </div>
+      </a>
+      <a href="/page3" class="article-card">
+        <img src="assets/fengshui-gifts.jpg" alt="Feng Shui Gifts">
+        <div class="article-content">
+          <p class="article-title">15+ Feng Shui Gifts for New Home</p>
+          <p class="article-date">Aug 03, 2024</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="selectedTab === 'Infrastructure'">
+  <div class="article-card">
+      <img src="assets/fengshui-owl.jpg" alt="Feng Shui Owls">
+      <div class="article-content">
+        <p class="article-title">5+ Feng Shui Owls Ideas & Benefits</p>
+        <p class="article-date">Aug 04, 2024</p>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="assets/fengshui-gifts.jpg" alt="Feng Shui Gifts">
+      <div class="article-content">
+        <p class="article-title">15+ Feng Shui Gifts for New Home</p>
+        <p class="article-date">Aug 03, 2024</p>
+      </div>
+    </div>
+    <div class="article-card">
+      <img src="assets/fengshui-gifts.jpg" alt="Feng Shui Gifts">
+      <div class="article-content">
+        <p class="article-title">15+ Feng Shui Gifts for New Home</p>
+        <p class="article-date">Aug 03, 2024</p>
+      </div>
+    </div>
+</div>
